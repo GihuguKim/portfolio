@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyanna's Sixth Form Priority & Revision Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="todo-app">
+      <!-- Deliverable 1: Custom Branding Header -->
+      <h2>
+        Gyanna's Sixth Form Priority & Revision Hub
+        <img src="https://cdn-icons-png.flaticon.com/512/4697/4697260.png" alt="icon">
+      </h2>
+      
+      <div class="row">
+        <input type="text" id="input-box" placeholder="Add your task or revision goal...">
+        <button onclick="addTask()">Add Task</button>
+      </div>
+
+      <!-- Task Status / Counter Bar -->
+      <p id="task-counter" class="counter-text">Pending Tasks: 0 | Completed: 0</p>
+
+      <ul id="list-container">
+        <!-- Tasks will be dynamically injected here by JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
