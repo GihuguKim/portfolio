@@ -1,34 +1,254 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gyanna's Sixth Form Priority & Revision Hub</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="todo-app">
-      <!-- Deliverable 1: Custom Branding Header -->
-      <h2>
-        Gyanna's Sixth Form Priority & Revision Hub
-        <img src="https://cdn-icons-png.flaticon.com/512/4697/4697260.png" alt="icon">
-      </h2>
-      
-      <div class="row">
-        <input type="text" id="input-box" placeholder="Add your task or revision goal...">
-        <button onclick="addTask()">Add Task</button>
+ <!DOCTYPE html>
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-badge">PORTFOLIO & RESEARCH CASE STUDIES</div>
+      <h2 class="section-title">Academic Research & Software Builds</h2>
+      <p class="section-description">
+        Explore interactive projects across Pure Mathematics 1, Client-Side Software Engineering, and Sociolinguistic Analysis.
+      </p>
+
+      <!-- DYNAMIC CATEGORY FILTER BUTTONS -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All Fields (5)</button>
+        <button class="filter-btn" data-filter="math">Pure Mathematics (1)</button>
+        <button class="filter-btn" data-filter="software">Applied Software (3)</button>
+        <button class="filter-btn" data-filter="linguistics">Sociolinguistics (1)</button>
       </div>
 
-      <!-- Task Status / Counter Bar -->
-      <p id="task-counter" class="counter-text">Pending Tasks: 0 | Completed: 0</p>
+      <!-- FILTERABLE CARDS GRID -->
+      <div class="projects-grid" id="projects-grid">
 
-      <ul id="list-container">
-        <!-- Tasks will be dynamically injected here by JavaScript -->
+        <!-- CARD 1: OCT 2025 PURE 1 PAPER (NEW ACADEMIC ENTRY!) -->
+        <article class="project-card" data-category="math">
+          <div class="project-header">
+            <span class="project-tag math-tag">Pure Math 1</span>
+            <span class="project-status">93.8% Distinction 🌟</span>
+          </div>
+          <h3 class="project-title">Oct 2025 IAL P1 Examination Sitting</h3>
+          <p class="project-desc">
+            Complete timed terminal sitting of official paper P78848A. Solved compound swimming pool sector models in radians ($211\text{ m}^2$), disguised quartic equations ($x = \pm 2\sqrt{2}$), and ratio triangle cosine rule geometries.
+          </p>
+          <div class="project-tech">
+            <span>Pearson Edexcel P1</span>
+            <span>Radian Modeling</span>
+            <span>Quartic Systems</span>
+            <span>Surds & Calculus</span>
+          </div>
+          <button class="btn btn-card-action" onclick="openModal('modal-p1')">
+            Inspect Examination Audit →
+          </button>
+        </article>
+
+        <!-- CARD 2: IAL ENGLISH UNIT 1 RHETORIC (NEW RESEARCH ENTRY!) -->
+        <article class="project-card" data-category="linguistics">
+          <div class="project-header">
+            <span class="project-tag lang-tag">Linguistics</span>
+            <span class="project-status">91.4% Distinction 🌟</span>
+          </div>
+          <h3 class="project-title">Political Discourse & Identity Construction</h3>
+          <p class="project-desc">
+            Comparative analysis of spoken Capitol Hill walkout rhetoric vs. parliamentary institutional forewords. Applied Goffman's self-presentation, Tajfel's Social Identity Theory, and morphological affixes.
+          </p>
+          <div class="project-tech">
+            <span>Pearson IAL Unit 1</span>
+            <span>Pragmatic Deixis</span>
+            <span>Morphology</span>
+            <span>Sociolinguistics</span>
+          </div>
+          <button class="btn btn-card-action" onclick="openModal('modal-english')">
+            Inspect Linguistic Audit →
+          </button>
+        </article>
+
+        <!-- CARD 3: TASK HUB WITH LOCALSTORAGE -->
+        <article class="project-card" data-category="software">
+          <div class="project-header">
+            <span class="project-tag">Project 04</span>
+            <span class="project-status">100% Distinction 🌟</span>
+          </div>
+          <h3 class="project-title">Sixth Form Priority & Revision Hub</h3>
+          <p class="project-desc">
+            State-persistent productivity application featuring dynamic DOM mutation, custom dark cyber-indigo theme, event delegation, and browser localStorage persistence so revision tasks survive system reboots.
+          </p>
+          <div class="project-tech">
+            <span>Vanilla JavaScript</span>
+            <span>Web Storage API</span>
+            <span>Event Delegation</span>
+            <span>DOM Mutation</span>
+          </div>
+          <button class="btn btn-card-action" onclick="openModal('modal-task')">
+            Inspect Architecture →
+          </button>
+        </article>
+
+        <!-- CARD 4: INTERACTIVE QUIZ ENGINE -->
+        <article class="project-card" data-category="software">
+          <div class="project-header">
+            <span class="project-tag">Project 03</span>
+            <span class="project-status">100% Distinction 🌟</span>
+          </div>
+          <h3 class="project-title">STEM & Computing Interactive Quiz Engine</h3>
+          <p class="project-desc">
+            Multi-state testing engine utilizing array-of-objects data modeling, dynamic score tracking, instant visual feedback (green/red states), and computer science algorithms (Binary Search $O(\log n)$, XOR logic).
+          </p>
+          <div class="project-tech">
+            <span>JavaScript ES6</span>
+            <span>Array Methods</span>
+            <span>Score Engine</span>
+            <span>State Cycles</span>
+          </div>
+          <button class="btn btn-card-action" onclick="openModal('modal-quiz')">
+            Inspect Architecture →
+          </button>
+        </article>
+
+        <!-- CARD 5: VECTOR HUD ENGINE -->
+        <article class="project-card" data-category="software">
+          <div class="project-header">
+            <span class="project-tag">Project 01</span>
+            <span class="project-status">Production Ready 🌟</span>
+          </div>
+          <h3 class="project-title">Cybernetic Coordinate & Vector HUD</h3>
+          <p class="project-desc">
+            Real-time 2D HTML5 Canvas simulation converting pure coordinate geometry into an interactive 60 FPS viewport with polar radian transforms, perpendicular slopes, and live JSON telemetry serialization.
+          </p>
+          <div class="project-tech">
+            <span>HTML5 Canvas 2D</span>
+            <span>Cartesian Math</span>
+            <span>Game Loops</span>
+            <span>JSON Telemetry</span>
+          </div>
+          <button class="btn btn-card-action" onclick="openModal('modal-hud')">
+            Inspect Architecture →
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE MODAL DIALOGS ================= -->
+  <div class="modal-backdrop" id="modal-backdrop" onclick="closeAllModals()"></div>
+
+  <!-- MODAL 1: PURE 1 PAST PAPER -->
+  <div class="modal-card" id="modal-p1">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <span class="project-tag math-tag">WMA11/01 Official Examination</span>
+        <h3>October 2025 Pure 1 Paper (P78848A) Case Study</h3>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-stats-bar">
+        <div class="stat-box">
+          <span class="stat-label">Evaluated Score</span>
+          <span class="stat-value text-emerald">53.0 / 56.5</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Accuracy Percentage</span>
+          <span class="stat-value text-emerald">93.8%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Standard</span>
+          <span class="stat-value text-indigo">Grade A* Distinction</span>
+        </div>
+      </div>
+      <h4>Core Exam Breakthroughs:</h4>
+      <ul class="modal-list">
+        <li><strong>Question 7 (Compound Swimming Pool):</strong> Calculated major reflex angle $\theta = 2\pi - 1.65 = 4.633\text{ rad}$, surface area $= 211\text{ m}^2$, and total perimeter $= 56\text{ m}$ without rounding slips.</li>
+        <li><strong>Question 4 (Quartic Rational System):</strong> Cleared denominators to form $x^4 - 3x^2 - 40 = 0$, substituted $m = x^2$, and cleanly extracted valid roots $x = \pm 2\sqrt{2}$.</li>
+        <li><strong>Question 3 (Cosine Rule Ratio Triangle):</strong> Calculated obtuse angle $\theta = 108.2^\circ$ from side ratio $2:4:5$, inverting area equation to shortest side $2x = 12.1\text{ cm}$.</li>
       </ul>
     </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- MODAL 2: ENGLISH LANGUAGE UNIT 1 -->
+  <div class="modal-card" id="modal-english">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <span class="project-tag lang-tag">WEN01/01 Comparative Analysis</span>
+        <h3>Sociolinguistics & Political Rhetoric Case Study</h3>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-stats-bar">
+        <div class="stat-box">
+          <span class="stat-label">Evaluated Score</span>
+          <span class="stat-value text-emerald">32.0 / 35.0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Accuracy Percentage</span>
+          <span class="stat-value text-emerald">91.4%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Standard</span>
+          <span class="stat-value text-indigo">Grade A* Level 5</span>
+        </div>
+      </div>
+      <h4>Core Theoretical Frameworks:</h4>
+      <ul class="modal-list">
+        <li><strong>Pragmatic Deixis & Tajfel's Social Identity:</strong> Contrasted first-person plural pronouns (<em>"we"</em>, <em>"our"</em>) solidifying in-group solidarity with adversarial second-person address (<em>"you get to decide who lives"</em>).</li>
+        <li><strong>Acoustic Spoken Rhetoric:</strong> Evaluated bare non-finite base verbs (<em>"vote"</em>) and parallel prepositional cadences (<em>"in our schools... on the streets"</em>).</li>
+        <li><strong>Morphological Analysis:</strong> Deconstructed abstract Latinate noun <em>dis-enfranchise-ment</em> into privative prefix, free root, and nominalising suffix.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODAL 3: TASK HUB -->
+  <div class="modal-card" id="modal-task">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <span class="project-tag">Project 04 Architecture</span>
+        <h3>Task Hub & LocalStorage State Rehydration</h3>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>Software Architecture Highlights:</h4>
+      <ul class="modal-list">
+        <li><strong>DOM Event Delegation:</strong> Wired click listeners on parent list containers to toggle <code>.checked</code> and delete nodes via <code>e.target.tagName</code>.</li>
+        <li><strong>Web Storage API:</strong> Serialized DOM nodes into local browser cache via <code>localStorage.setItem()</code>, ensuring task survival across reboots.</li>
+        <li><strong>Dynamic Status Telemetry:</strong> Live calculation of pending vs. completed tasks rendered to the DOM header.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODAL 4: QUIZ ENGINE -->
+  <div class="modal-card" id="modal-quiz">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <span class="project-tag">Project 03 Architecture</span>
+        <h3>STEM & Computing Interactive Quiz Engine</h3>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>Software Architecture Highlights:</h4>
+      <ul class="modal-list">
+        <li><strong>Array Data Modeling:</strong> Structured multi-question objects with boolean answer validation flags.</li>
+        <li><strong>Visual State Mutation:</strong> Instant feedback applying green/red CSS classes and disabling click listeners after selection.</li>
+        <li><strong>Game Loop Termination:</strong> Score compilation screen with dynamic "Play Again" restart handler.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MODAL 5: VECTOR HUD -->
+  <div class="modal-card" id="modal-hud">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <span class="project-tag">Project 01 Architecture</span>
+        <h3>Cybernetic Coordinate & Vector Physics HUD</h3>
+      </div>
+      <button class="modal-close" onclick="closeAllModals()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <h4>Software Architecture Highlights:</h4>
+      <ul class="modal-list">
+        <li><strong>Inverted Cartesian Transform:</strong> Translated top-left canvas origin $(0, 0)$ into centered mathematical coordinate plane with true vertical $+y$ orientation.</li>
+        <li><strong>Pure Math Calculus & Geometry:</strong> Real-time evaluation of Pythagoras distances, orthogonal normal slopes ($m_{\perp} = -1/m$), and polar radians via <code>Math.atan2()</code>.</li>
+        <li><strong>60 FPS Animation Engine:</strong> High-performance decoupled render thread powered by <code>requestAnimationFrame()</code>.</li>
+      </ul>
+    </div>
+  </div>
